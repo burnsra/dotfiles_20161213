@@ -1,0 +1,11 @@
+<settings>
+  <proxies>
+   <proxy>
+      <id>local-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>127.0.0.1</host>
+      <port>3128</port>
+    </proxy>
+  </proxies>
+</settings>

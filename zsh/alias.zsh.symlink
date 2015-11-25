@@ -1,0 +1,54 @@
+#########
+# Alias #
+#########
+
+# Move dirs
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Shorter commands
+alias cask='brew cask'
+alias e=$EDITOR
+alias gem='sudo -E gem'
+alias h=history
+
+# Don't show groups on long listing
+alias ll='ls -lG'     # long listing
+alias la='ls -lGa'    # with hidden
+alias lsd='ls -ltGa'  # sorted by latest changed
+alias lss='ls -lSGa'  # sorted by size
+
+# File sizes for current directory
+alias ducks='du -cksh *'
+# Total disk usage for current folder
+alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"
+
+# SHA compatibility
+alias sha1sum=shasum
+
+alias ios="open -a /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+
+GRC=`which grc`
+    if [ "$TERM" != dumb ] && [ -n "$GRC" ]
+    then
+        alias colourify="$GRC -es --colour=auto"
+        alias configure='colourify ./configure'
+        alias diff='colourify diff'
+        alias make='colourify make'
+        alias gcc='colourify gcc'
+        alias g++='colourify g++'
+        alias as='colourify as'
+        alias gas='colourify gas'
+        alias ld='colourify ld'
+        alias netstat='colourify netstat'
+        alias ping='colourify ping'
+        alias traceroute='colourify /usr/sbin/traceroute'
+        alias head='colourify head'
+        alias tail='colourify tail'
+        alias dig='colourify dig'
+        alias mount='colourify mount'
+        alias ps='colourify ps'
+        alias mtr='colourify mtr'
+        alias df='colourify df'
+    fi
