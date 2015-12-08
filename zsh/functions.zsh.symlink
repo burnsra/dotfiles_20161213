@@ -50,8 +50,3 @@ function extract() {
 		echo "'$1' is not a valid file"
 	fi
 }
-
-function squid_restart() {
-cd /usr/local/var
-/usr/local/sbin/squid -N -d 1 -f ~/squid.conf -k reconfigure
-}
