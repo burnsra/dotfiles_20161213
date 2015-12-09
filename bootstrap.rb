@@ -15,4 +15,5 @@ Kernel.system "/usr/bin/sudo", "-v"
 puts
 
 install_symlinks
+install_zsh
 osx_defaults

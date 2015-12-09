@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'open3'
 
 DOTFILES = File.dirname(__FILE__)
 HOME = Dir.home
@@ -134,6 +135,15 @@ def install_symlinks
       }
       puts
   end
+end
+
+def install_zsh
+  ohai "Installing zsh"
+  stdout, stdeerr, status = Open3.capture3("tail -n 1 /etc/shells")
+  if stdout.chomp.eql?("/bin/zsh")
+    stdout, stdeerr, status = Open3.capture3("sudo sh -c \"echo '/usr/local/bin/zsh' >> /etc/shells\"")
+  end
+  stdout, stdeerr, status = Open3.capture3("sudo chsh -s $(which zsh) $LOGNAME")
 end
 
 def link_file(src, dst)
