@@ -2,9 +2,6 @@
 # Alias #
 #########
 
-# Atom
-alias atom='tmpin atom'
-
 # Move dirs
 alias ..='cd ..'
 alias ...='cd ../..'
