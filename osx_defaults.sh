@@ -155,3 +155,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 # https://twitter.com/UINT_MIN/status/652142001932996609
 defaults write com.apple.Terminal AutoMarkPromptLines -bool false
 defaults write com.apple.Terminal ShowLineMarks -bool false
+
+
+#
+# Login Window
+#
+
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Use of this workstation is subject to the terms of the Acceptable Use Policy.  For support on this device, please call the Kroger Support Center at  1-800-952-8889."
