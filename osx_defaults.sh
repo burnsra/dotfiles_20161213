@@ -46,6 +46,14 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
+# Disable animations when opening and closing windows
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+# Disable animations when opening a Quick Look window
+defaults write -g QLPanelAnimationDuration -float 0
+# Accelerated playback when adjusting the window size
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# Make all animations faster that are used by Mission Control.
+defaults write com.apple.dock expose-animation-duration -float 0.1
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Show Status bar in Finder
@@ -113,6 +121,8 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 defaults write enable-spring-load-actions-on-all-items -bool false
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
+# Add a blank space to your Dock
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 
 
 
