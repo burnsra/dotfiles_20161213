@@ -115,7 +115,7 @@ def install_homebrew
       puts "homebrew install"
       Kernel.system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
       Kernel.system 'brew tap Homebrew/bundle'
-      Kernel.system "brew bundle --file=#{File.dirname(__FILE__)}/private/Brewfile"
+      #Kernel.system "brew bundle --file=#{File.dirname(__FILE__)}/private/Brewfile"
     end
   end
 end
