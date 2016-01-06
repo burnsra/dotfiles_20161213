@@ -9,7 +9,10 @@
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 # Always show scrollbars
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Disable the over-the-top focus ring animation
+defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 # Disable Resume system-wide
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 # Enable subpixel font rendering on non-Apple LCDs
@@ -162,3 +165,18 @@ defaults write com.apple.Terminal ShowLineMarks -bool false
 #
 
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Use of this workstation is subject to the terms of the Acceptable Use Policy.  For support on this device, please call the Kroger Support Center at  1-800-952-8889."
+
+
+#
+# Misc
+#
+
+# Remove the sleep image file to save disk space
+sudo rm /private/var/vm/sleepimage
+# Create a zero-byte file instead…
+sudo touch /private/var/vm/sleepimage
+# …and make sure it can’t be rewritten
+sudo chflags uchg /private/var/vm/sleepimage
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
