@@ -132,6 +132,10 @@ def install_symlinks
           source = "#{File.dirname(x.sub('/.dotfiles','').sub('/private',''))}/#{File.basename(x, '.*' )}"
           destination = "#{x}"
           link_file(source, destination)
+          if File.extname(source).eql?(".key")
+            FileUtils.chmod 0600, source
+            FileUtils.chmod 0600, destination
+          end
       }
       puts
   end
